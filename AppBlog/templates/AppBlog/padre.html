@@ -25,6 +25,8 @@
                 
                 {% if user.is_authenticated %}
                 <p> Bienvenido: {{ user.username }}</p>
+
+                <a class="text-primary" href="{% url 'ver_perfil' %}">Perfil</a>
                 
                 
 
