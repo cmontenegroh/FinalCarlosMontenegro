@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from AppBlog.views import inicio, aeropuertos, trips
-from AppMensajes.views import lista_mensajes, enviar_mensaje
+from AppMensajes.views import  enviar_mensaje
 from AppLoggin.views import login_request
 from AppRegistro.views import register
 

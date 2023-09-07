@@ -6,10 +6,12 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 
-def ver_perfil(request):
-    perfil = Perfil.objects.get(usuario=request.user)
-    return render(request, 'AppPerfil/ver_perfil.html', {'perfil': perfil})
 
+
+
+def ver_perfil(request):
+    perfil, created = Perfil.objects.get_or_create(usuario=request.user)
+    return render(request, 'AppPerfil/ver_perfil.html', {'perfil': perfil})
 
 def editar_perfil(request):
     perfil = Perfil.objects.get(usuario=request.user)
