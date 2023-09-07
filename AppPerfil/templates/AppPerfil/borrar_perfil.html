@@ -1,0 +1,12 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+{% block content %}
+  <h2>Confirmar Borrado de Perfil</h2>
+  <p>¿Estás seguro de que deseas borrar tu perfil?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Borrar Perfil</button>
+  </form>
+  <a href="{% url 'ver_perfil' %}">Cancelar</a>
+{% endblock %}

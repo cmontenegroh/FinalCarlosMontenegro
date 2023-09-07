@@ -1,0 +1,18 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} TUS TRIPS {% endblock %}
+
+{% block contenido_que_cambia %}
+<h2>Tus trips:</h2>
+<form method="POST">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="guardar">
+
+
+
+</form>
+
+
+{% endblock %}

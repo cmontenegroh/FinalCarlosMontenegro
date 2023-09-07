@@ -1,0 +1,21 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} Info Viaje {% endblock %}
+
+{% block contenido_que_cambia %}
+<h2>Ingrese sus datos para registrarse:</h2>
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'register' %}" method="POST"> {% csrf_token %}
+
+    <table>
+        {{ form.as_table}}
+    </table>
+    <input type="submit" value="Registrar Usuario">
+</form>
+
+
+
+{% endblock %}

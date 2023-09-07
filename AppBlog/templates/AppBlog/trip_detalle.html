@@ -1,0 +1,15 @@
+
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} TRIPS {% endblock %}
+
+{% block contenido_que_cambia %}
+<h2>En detalle:</h2>
+<p>ITINERARIO: <i>{{trip.itinerario}}</i></p>
+<p>EMPRESA: <i>{{trip.empresa}}</i></p>
+<p>COMENTARIO: <i>{{trip.comentario}}</i></p>
+<p>TRIPER: <i>{{trip.triper}}</i></p>
+<p>FECHA: <i>{{trip.fecha}}</i></p>
+{% endblock %}

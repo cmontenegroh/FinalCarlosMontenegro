@@ -1,0 +1,17 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block content %}
+<h1>Mensajes recibidos:</h1>
+<ul>
+{% for mensaje in object_list %}
+  <li>De: {{ mensaje.emisor.username }}</li>
+  <li>{{ mensaje.contenido }}</li>
+  <li>Enviado: {{ mensaje.fecha_envio }}</li>
+{% empty %}
+  <li>No tienes mensajes.</li>
+{% endfor %}
+</ul>
+<a href="{% url 'enviar_mensaje' %}">Enviar mensaje</a>
+{% endblock %}

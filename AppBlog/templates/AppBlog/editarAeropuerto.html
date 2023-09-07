@@ -1,0 +1,22 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %}  {{ aeropuerto }} {% endblock %}
+
+{% block contenido_que_cambia %}
+<h2>Edita la info aqui:</h2>
+
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'editarAeropuerto' aeropuerto.id %}" method="POST"> {% csrf_token %}
+            
+    {{ formulario.as_p }}
+   
+    <input type="submit" value="Guardar cambios">
+
+</form>
+
+
+
+{% endblock %}

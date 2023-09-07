@@ -1,0 +1,12 @@
+{% extends "AppBlog/padre.html" %}
+{% load static %}
+{% block content %}
+  <h2>Mi Perfil</h2>
+  <img src="{{ perfil.avatar.url }}" alt="{{ perfil.nombre }} Avatar" width="100" height="100">
+  <p><strong>Nombre:</strong> {{ perfil.nombre }}</p>
+  <p><strong>Descripción:</strong> {{ perfil.descripcion }}</p>
+  <p><strong>Email:</strong> {{ perfil.email }}</p>
+
+  <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
+  <a href="{% url 'borrar_perfil' %}">Borrar Perfil</a>
+{% endblock %}

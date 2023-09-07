@@ -1,0 +1,61 @@
+{% extends "Appblog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} AEROPUERTOS {% endblock %}
+
+{% block contenido_que_cambia %}
+<h2>Contanos tu experiencia en el aeropuerto:</h2>
+
+<h3>{{ mensaje }}</h3>
+
+<form action="{% url 'aeropuertos' %}" method="POST"> {% csrf_token %}
+            
+    {{ formulario.as_p }}
+   
+    <input type="submit" value="Agregar">
+
+</form>
+
+<table>
+    <thead>
+        <tr>
+
+            <th>Nombre</th>
+            <th>Ciudad</th>
+            <th>Comentario</th>
+            <th>Triper</th>
+            <th>Fecha</th>
+            
+
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for aeropuerto in aeropuertos %}
+        <tr>
+            <td>
+                {{ aeropuerto.nombre }}
+            </td>
+            <td>
+                {{ aeropuerto.ciudad }}
+            </td>
+            <td>
+                {{ aeropuerto.comentario}}
+            </td> 
+            <td>
+                {{ aeropuerto.triper }}
+            </td>
+            <td>
+                {{ aeropuerto.fecha }}
+            </td>
+            <td>
+                <a class="text-primary" href="{% url 'eliminarAeropuerto' aeropuerto.id %}"> Eliminar</a>
+                <a class="text-primary" href="{% url 'editarAeropuerto' aeropuerto.id %}"> Editar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

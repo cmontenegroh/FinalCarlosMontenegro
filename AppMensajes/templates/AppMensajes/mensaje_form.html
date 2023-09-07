@@ -1,0 +1,16 @@
+
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block titulo %} Tus Mensajes {% endblock %}
+
+{% block content %}
+<h1>Enviar mensaje:</h1>
+<form action="{% url 'enviar_mensaje' %}" method="POST"> {% csrf_token %}
+
+{{ form.as_p }}
+<button type="submit">Enviar</button>
+</form>
+<a href="{% url 'lista_mensajes' %}">Volver a mensajes</a>
+{% endblock %}

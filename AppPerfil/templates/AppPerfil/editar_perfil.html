@@ -1,0 +1,23 @@
+{% extends "AppBlog/padre.html" %}
+
+{% load static %}
+
+{% block content %}
+  <h2>Editar Mi Perfil</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" value="{{ perfil.nombre }}" required><br>
+    <label for="descripcion">Descripción:</label>
+    <textarea name="descripcion" required>{{ perfil.descripcion }}</textarea><br>
+    <label for="email">Email:</label>
+    <input type="email" name="email" value="{{ perfil.email }}" required><br>
+    <label for="contraseña">Contraseña:</label>
+    <input type="password" name="contraseña" value="{{ perfil.contraseña }}" required><br>
+    <label for="avatar">Avatar:</label>
+    <input type="file" name="avatar">
+    <br><br>
+    <button type="submit">Guardar Cambios</button>
+  </form>
+  <a href="{% url 'ver_perfil' %}">Volver al Perfil</a>
+{% endblock %}
