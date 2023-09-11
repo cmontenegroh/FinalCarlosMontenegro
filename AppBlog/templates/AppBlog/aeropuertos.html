@@ -9,11 +9,12 @@
 
 <h3>{{ mensaje }}</h3>
 
-<form action="{% url 'aeropuertos' %}" method="POST"> {% csrf_token %}
+
+<form action="{% url 'aeropuertos' %}" method="POST" enctype="multipart/form-data"> {% csrf_token %}
             
     {{ formulario.as_p }}
    
-    <input type="submit" value="Agregar">
+    <button type"submit">Agregar</button>
 
 </form>
 
@@ -32,6 +33,10 @@
     </thead>
     <tbody>
 
+        {% if aeropuerto.foto %}
+                <img src="{{ aeropuerto.foto.url }}" alt="Aeropuerto Image" width="100" height="100">
+              {% endif %}
+
         {% for aeropuerto in aeropuertos %}
         <tr>
             <td>
@@ -48,9 +53,6 @@
             </td>
             <td>
                 {{ aeropuerto.fecha }}
-            </td>
-            <td>
-                <img src="{{ aeropuerto.foto.url }}" alt="Aeropuerto Image">
             </td>
             <td>
                 <a class="text-primary" href="{% url 'eliminarAeropuerto' aeropuerto.id %}"> Eliminar</a>

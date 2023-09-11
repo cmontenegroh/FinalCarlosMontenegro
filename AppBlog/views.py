@@ -15,35 +15,38 @@ from django.contrib.auth.decorators import login_required
 def inicio(request):
     return render(request,"AppBlog/inicio.html")
 
+
+
+
+
 @login_required
 def aeropuertos(request):
-    if request.method=="POST":
-        form=AeropuertoForm(request.POST)
+    if request.method == "POST":
+        form = AeropuertoForm(request.POST, request.FILES)
         if form.is_valid():
-            info=form.cleaned_data
-            nombre=info["nombre"]
-            ciudad=info["ciudad"]
-            comentario=info["comentario"]
-            triper=info["triper"]
-            fecha=info["fecha"]
-            foto=fot0[foto]
-            aeropuerto=Aeropuerto(nombre=nombre, ciudad=ciudad, comentario=comentario, triper=triper, fecha=fecha, foto=foto)
-            
+            info = form.cleaned_data
+            nombre = info["nombre"]
+            ciudad = info["ciudad"]
+            comentario = info["comentario"]
+            triper = info["triper"]
+            fecha = info["fecha"]
+            foto = info["foto"]
+            aeropuerto = Aeropuerto(
+                nombre=nombre, ciudad=ciudad, comentario=comentario, triper=triper, fecha=fecha, foto=foto)
+
             aeropuerto.save()
-            mensaje="Agregaste un aeropuerto"
-           
-           
+            mensaje = "Agregaste un aeropuerto"
+
         else:
-            mensaje="Datos invalidos"
-        aeropuertos=Aeropuerto.objects.all()   
-        formulario_aeropuerto=AeropuertoForm()
-        return render(request,"AppBlog/aeropuertos.html", {"mensaje":mensaje, "formulario":formulario_aeropuerto,"aeropuertos":aeropuertos})
+            mensaje = "Datos invalidos"
+        aeropuertos = Aeropuerto.objects.all()
+        formulario_aeropuerto = AeropuertoForm()
+        return render(request, "AppBlog/aeropuertos.html", {"mensaje": mensaje, "formulario": formulario_aeropuerto, "aeropuertos": aeropuertos})
     else:
-        formulario_aeropuerto=AeropuertoForm()
-        aeropuertos=Aeropuerto.objects.all()
-            
-       
-    return render(request,"AppBlog/aeropuertos.html", {"formulario":formulario_aeropuerto, "aeropuertos": aeropuertos})
+        formulario_aeropuerto = AeropuertoForm()
+        aeropuertos = Aeropuerto.objects.all()
+
+    return render(request, "AppBlog/aeropuertos.html", {"formulario": formulario_aeropuerto, "aeropuertos": aeropuertos})
 
 @login_required
 def eliminarAeropuerto(request, id):
