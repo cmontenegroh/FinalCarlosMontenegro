@@ -21,7 +21,8 @@ class Aeropuerto(models.Model):
     comentario=models.CharField(max_length=50)
     triper=models.CharField(max_length=50, null=True)
     fecha=models.DateField(default=date.today)
-    
+    foto= models.ImageField(upload_to='media/', blank=True, null=True)
+
     def __str__(self):
         return f"{self.nombre} - {self.ciudad}"
 

@@ -26,7 +26,9 @@ def aeropuertos(request):
             comentario=info["comentario"]
             triper=info["triper"]
             fecha=info["fecha"]
-            aeropuerto=Aeropuerto(nombre=nombre, ciudad=ciudad, comentario=comentario, triper=triper, fecha=fecha)
+            foto=fot0[foto]
+            aeropuerto=Aeropuerto(nombre=nombre, ciudad=ciudad, comentario=comentario, triper=triper, fecha=fecha, foto=foto)
+            
             aeropuerto.save()
             mensaje="Agregaste un aeropuerto"
            
@@ -64,6 +66,8 @@ def editarAeropuerto(request,id):
             aeropuerto.comentario=info["comentario"]
             aeropuerto.triper=info["triper"]
             aeropuerto.fecha=info["fecha"]
+            if 'foto' in request.FILES:
+             aeropuerto.foto = request.FILES['foto']
             
             aeropuerto.save()
             mensaje="Aeropuerto editado correctamente"
@@ -73,8 +77,9 @@ def editarAeropuerto(request,id):
 
     else:
         
-        formulario_aeropuerto=AeropuertoForm(initial={"nombre":aeropuerto.nombre,"ciudad":aeropuerto.ciudad,"comentario":aeropuerto.comentario, "triper":aeropuerto.triper,"fecha":aeropuerto.fecha})
+        formulario_aeropuerto=AeropuertoForm(initial={"nombre":aeropuerto.nombre,"ciudad":aeropuerto.ciudad,"comentario":aeropuerto.comentario, "triper":aeropuerto.triper,"fecha":aeropuerto.fecha, "foto": aeropuerto.foto})
         return render(request,"AppBlog/editarAeropuerto.html", {"formulario":formulario_aeropuerto,"aeropuerto":aeropuerto})
+
 
 @login_required
 def trips(request):

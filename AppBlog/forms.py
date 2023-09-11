@@ -10,4 +10,5 @@ class AeropuertoForm(forms.Form):
     comentario=forms.CharField(max_length=50)
     triper=forms.CharField(max_length=50)
     fecha=forms.DateField()
+    foto=forms.ImageField()
     

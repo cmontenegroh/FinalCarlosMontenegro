@@ -50,6 +50,9 @@
                 {{ aeropuerto.fecha }}
             </td>
             <td>
+                <img src="{{ aeropuerto.foto.url }}" alt="Aeropuerto Image">
+            </td>
+            <td>
                 <a class="text-primary" href="{% url 'eliminarAeropuerto' aeropuerto.id %}"> Eliminar</a>
                 <a class="text-primary" href="{% url 'editarAeropuerto' aeropuerto.id %}"> Editar</a>
             </td>
