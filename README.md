@@ -2,7 +2,7 @@
 
 # TuInfoTrip - Sitio web de Experiencias de Viaje
 
-Este es el README para el proyecto de TuInfoTrip, un sitio web desarrollado en Python utilizando el framework Django. InfoViaje se centra en permitir a los usuarios registrar sus experiencias de viaje relacionadas con vuelos y aeropuertos. Los usuarios pueden registrarse, iniciar sesión y realizar varias acciones en el sitio, como crear entradas de blog sobre aeropuertos, viajes, y comunicarse con otros usuarios.
+Este es el README para el proyecto de TuInfoTrip, un sitio web desarrollado en Python utilizando el framework Django. TuInfoTrip se centra en permitir a los usuarios registrar sus experiencias de viaje relacionadas con vuelos y aeropuertos. Los usuarios pueden registrarse, iniciar sesión y realizar varias acciones en el sitio, como crear entradas de blog sobre aeropuertos, viajes, y comunicarse con otros usuarios.
 
 ## Contenido del Proyecto
 
