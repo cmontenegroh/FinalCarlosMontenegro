@@ -41,8 +41,5 @@ Si deseas probar el sitio de inmediato, se ha creado un superusuario con las sig
 
 Puedes usar estas credenciales para iniciar sesión como superusuario y explorar todas las funcionalidades del sitio.
 
-Link al video en Youtube: 
-
-https://youtu.be/tDtMquBbaQg?si=QrnCncZnBGOqKVYC
 
 ¡Disfruta de TuInfoTrip y comparte tus emocionantes experiencias de viaje!
