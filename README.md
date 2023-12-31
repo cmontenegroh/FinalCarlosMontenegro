@@ -43,3 +43,7 @@ Puedes usar estas credenciales para iniciar sesión como superusuario y explorar
 
 
 ¡Disfruta de TuInfoTrip y comparte tus emocionantes experiencias de viaje!
+
+Link a la demo en YouTube: https://youtu.be/tDtMquBbaQg
+
+
